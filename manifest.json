@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "MintTap Printer",
+  "version": "1.0",
+  "description": "Extract text from Cengage MindTap ebook pages as you skim through",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["https://ng.cengage.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MindTap Extractor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ng.cengage.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
